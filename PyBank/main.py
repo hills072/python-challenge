@@ -33,6 +33,8 @@ with open('budget_data.csv', 'r') as budget_data:
 
         #calculate total average change
         average_change = sum(monthly_change) / len(monthly_change)
+        greatest_increase = max(monthly_change)
+        greatest_decrease = min(monthly_change)
     
 
     print(average_change)
