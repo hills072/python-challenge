@@ -14,12 +14,14 @@ with open('budget_data.csv', 'r') as budget_data:
     monthly_change = []
     profitloss_list = []
     monthly_change = []
+    months = []
 
     #calculate total months and net profit/losses over entire period
     for row in csv_reader:
         total_months += 1
         monthly_total += int(row[1])
         profitloss_list.append(row[1])
+        months.append(row[0])
     
     print(total_months)
     print(monthly_total)
@@ -36,5 +38,11 @@ with open('budget_data.csv', 'r') as budget_data:
         greatest_increase = max(monthly_change)
         greatest_decrease = min(monthly_change)
     
+    position = monthly_change.index(greatest_increase) + 1
 
+    print(months[position])
+    print(greatest_increase)
+
+
+    print(position)
     print(average_change)
