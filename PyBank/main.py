@@ -1,7 +1,7 @@
 import csv
 
 #----Open budget data for reading and skip header row ----
-with open('budget_data.csv', 'r') as budget_data:
+with open("budget_data.csv", "r") as budget_data:
     csv_reader = csv.reader(budget_data)
 
     next(csv_reader)
