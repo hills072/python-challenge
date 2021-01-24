@@ -24,24 +24,35 @@ with open("Resources/election_data.csv", "r") as election_data:
                 unique_names_list.append(name)
         return unique_names_list
 
-    print(get_unique_names(candidates_column))
+    unique_names = [get_unique_names(candidates_column)]
+    print(unique_names)
+
+    for name in unique_names:
+        candidates_column.count()
+
+
+    
+    
+    # list.count(candidates_column("Khan"))
+        
+    
 
 
     
         
-    Khan_tot = sum("Khan" in i for i in candidates_column)
-    Correy_tot = sum("Correy" in i for i in candidates_column)
-    Li_tot = sum("Li" in i for i in candidates_column)
-    OTooley_tot = sum("O'Tooley" in i for i in candidates_column)
+    # Khan_tot = sum("Khan" in i for i in candidates_column)
+    # Correy_tot = sum("Correy" in i for i in candidates_column)
+    # Li_tot = sum("Li" in i for i in candidates_column)
+    # OTooley_tot = sum("O'Tooley" in i for i in candidates_column)
 
-    Pop_vote_summary = {"Khan": Khan_tot, "Correy": Correy_tot, "Li": Li_tot, "O'Tooley": OTooley_tot}
+    # Pop_vote_summary = {"Khan": Khan_tot, "Correy": Correy_tot, "Li": Li_tot, "O'Tooley": OTooley_tot}
 
-    winner = max(Pop_vote_summary, key=Pop_vote_summary.get)
+    # winner = max(Pop_vote_summary, key=Pop_vote_summary.get)
 
-    KhanPercent = (Khan_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
-    CorreyPercent = (Correy_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
-    LiPercent =  (Li_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
-    OTooleyPercent = (OTooley_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
+    # KhanPercent = (Khan_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
+    # CorreyPercent = (Correy_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
+    # LiPercent =  (Li_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
+    # OTooleyPercent = (OTooley_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
 
     
     # print("Election Rresults")
