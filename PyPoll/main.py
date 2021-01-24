@@ -13,6 +13,21 @@ with open("Resources/election_data.csv", "r") as election_data:
         total_votes += 1
         candidates_column.append([row[2]])
 
+    def get_unique_names(candidates_column):
+        
+        unique_names_list = []
+        
+        for name in candidates_column:
+            if name in unique_names_list:
+                continue
+            else:
+                unique_names_list.append(name)
+        return unique_names_list
+
+    print(get_unique_names(candidates_column))
+
+
+    
         
     Khan_tot = sum("Khan" in i for i in candidates_column)
     Correy_tot = sum("Correy" in i for i in candidates_column)
@@ -29,17 +44,17 @@ with open("Resources/election_data.csv", "r") as election_data:
     OTooleyPercent = (OTooley_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
 
     
-    print("Election Rresults")
-    print("--------------------------")
-    print(f"Total Votes: {total_votes}")
-    print("--------------------------")
-    print(f"Khan: {KhanPercent:.3f}% ({Khan_tot})")
-    print(f"Correy: {CorreyPercent:.3f}% ({Correy_tot})")
-    print(f"Li: {LiPercent:.3f}% ({Li_tot})")
-    print(f"O'Tooley: {OTooleyPercent:.3f}% ({OTooley_tot})")
-    print("--------------------------") 
-    print(f"Winner: {winner}")
-    print("--------------------------")      
+    # print("Election Rresults")
+    # print("--------------------------")
+    # print(f"Total Votes: {total_votes}")
+    # print("--------------------------")
+    # print(f"Khan: {KhanPercent:.3f}% ({Khan_tot})")
+    # print(f"Correy: {CorreyPercent:.3f}% ({Correy_tot})")
+    # print(f"Li: {LiPercent:.3f}% ({Li_tot})")
+    # print(f"O'Tooley: {OTooleyPercent:.3f}% ({OTooley_tot})")
+    # print("--------------------------") 
+    # print(f"Winner: {winner}")
+    # print("--------------------------")      
 
 
 # print(winner)
