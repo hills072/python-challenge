@@ -6,10 +6,6 @@ with open("Resources/election_data.csv", "r") as election_data:
     next(csv_reader)
     
     total_votes = 0
-    Khan = 0
-    Correy = 0
-    Li = 0
-    OTooley = 0
 
     candidates_column = []
 
@@ -28,13 +24,25 @@ with open("Resources/election_data.csv", "r") as election_data:
     winner = max(Pop_vote_summary, key=Pop_vote_summary.get)
 
     KhanPercent = (Khan_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
-    CorreyPercent = (Correy_tot / (Khan_tot + Correy + Li_tot + OTooley_tot)) * 100
+    CorreyPercent = (Correy_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
     LiPercent =  (Li_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
     OTooleyPercent = (OTooley_tot / (Khan_tot + Correy_tot + Li_tot + OTooley_tot)) * 100
 
     
-    
-    # print(winner)
+    print("Election Rresults")
+    print("--------------------------")
+    print(f"Total Votes: {total_votes}")
+    print("--------------------------")
+    print(f"Khan: {KhanPercent:.3f}% ({Khan_tot})")
+    print(f"Correy: {CorreyPercent:.3f}% ({Correy_tot})")
+    print(f"Li: {LiPercent:.3f}% ({Li_tot})")
+    print(f"O'Tooley: {OTooleyPercent:.3f}% ({OTooley_tot})")
+    print("--------------------------") 
+    print(f"Winner: {winner}")
+    print("--------------------------")      
+
+
+# print(winner)
     # print(Pop_vote_summary)
     # print(f'{round(KhanPercent, 5)}%')
     # print(f'{round(CorreyPercent, 5)}%')
@@ -45,16 +53,3 @@ with open("Resources/election_data.csv", "r") as election_data:
     # print(Li)
     # print(OTooley)
     # print(total_votes)
-    
-    print("Election Rresults")
-    print("--------------------------")
-    print(f"Total Votes: {total_votes}")
-    print("--------------------------")
-    print(f"Khan: {KhanPercent} ({Khan_tot})")
-    print(f"Correy: {CorreyPercent} ({Correy_tot})")
-    print(f"Li: {LiPercent} ({Li_tot})")
-    print(f"O'Tooley: {OTooleyPercent} ({OTooley_tot})")
-    print("--------------------------") 
-    print(f"Winner: {winner}")
-    print("--------------------------")      
-        
