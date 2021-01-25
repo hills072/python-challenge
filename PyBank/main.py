@@ -59,7 +59,7 @@ with open("Resources/budget_data.csv", "r") as budget_data:
 
     #------Output exported to .txt file--------
 
-with open('bankdata.txt', 'w') as txt_file:
+with open('Analysis/bankdata.txt', 'w') as txt_file:
 
     txt_file.write(f"Financial Analysis\n")
     txt_file.write(f"------------------------------\n")
