@@ -12,7 +12,6 @@ with open("Resources/budget_data.csv", "r") as budget_data:
     #create empty lists to store data
     monthly_change = []
     profitloss_list = []
-    monthly_change = []
     months = []
 
     #calculate total months and net profit/losses over entire period
@@ -27,7 +26,7 @@ with open("Resources/budget_data.csv", "r") as budget_data:
     #source: https://www.kite.com/python/answers/how-to-use-range(len())-in-python#:~:text=Use%20range()%20and%20len,access%20the%20items%20in%20obj%20.
     for i in range(1, len(profitloss_list)):
         
-        #calculate monthly change and store in monthly_change list
+        #calculate monthly change and store in monthly_change list.
         monthly_change.append(int(profitloss_list[i]) - int(profitloss_list[i-1]))
 
         #calculate total average change
@@ -35,6 +34,7 @@ with open("Resources/budget_data.csv", "r") as budget_data:
         greatest_increase = max(monthly_change)
         greatest_decrease = min(monthly_change)
     
+    # find greatest increase and greatest decrease in profits
     position_increase = monthly_change.index(greatest_increase) + 1
     position_decrease = monthly_change.index(greatest_decrease) + 1
 
@@ -57,5 +57,14 @@ with open("Resources/budget_data.csv", "r") as budget_data:
     print(f"Greatest Increase in Profits: {months[position_increase]} (${greatest_increase})")
     print(f"Greatest Decrease in Profits: {months[position_decrease]} (${greatest_decrease})")
 
+    #------Output exported to .txt file--------
 
+with open('bankdata.txt', 'w') as txt_file:
 
+    txt_file.write(f"Financial Analysis\n")
+    txt_file.write(f"------------------------------\n")
+    txt_file.write(f"Total Months: {total_months}\n")
+    txt_file.write(f"Total: ${monthly_total}\n")
+    txt_file.write(f"Average Change: ${round(average_change, 2)}\n")
+    txt_file.write(f"Greatest Increase in Profits: {months[position_increase]} (${greatest_increase})\n")
+    txt_file.write(f"Greatest Decrease in Profits: {months[position_decrease]} (${greatest_decrease})\n")
