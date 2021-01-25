@@ -50,7 +50,7 @@ with open("Resources/election_data.csv", "r") as election_data:
 
 
 # export output to text file
-with open('polldata.txt', 'w') as txt_file:
+with open('Analysis/polldata.txt', 'w') as txt_file:
 
     txt_file.write(f'Election Results\n')
     txt_file.write("--------------------------\n")
